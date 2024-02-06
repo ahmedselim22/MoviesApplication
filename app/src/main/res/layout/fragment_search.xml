@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.SearchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroup_search"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_gravity="center"
+            android:checkedButton="@id/radioButton_search_movies"
+            android:background="@drawable/radio_group_bg"
+            >
+            <RadioButton
+                android:text="Movie"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:textColor="@color/search_type_color_bg"
+                android:background="@drawable/search_type_selector"
+                android:id="@+id/radioButton_search_movies"
+                android:button="@android:color/transparent"
+                />
+            <RadioButton
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:text="Tv Show"
+                android:background="@drawable/search_type_selector"
+                android:gravity="center"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:textColor="@color/search_type_color_bg"
+                android:button="@android:color/transparent"
+                android:id="@+id/radioButton_search_tvShows"
+                />
+        </RadioGroup>
+
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:iconifiedByDefault="false"
+                android:padding="@dimen/_8sdp"
+                android:queryHint="Search" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_searchMovies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_8sdp" />
+
+        <ProgressBar
+            android:id="@+id/search_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
